@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sachita's ePortfolio | Junior Full Stack Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,6 +40,34 @@
                     <p>On the <strong>front-end</strong> side, you're working with HTML for structure, CSS for the look of things, and JavaScript whenever you need something to actually react to a user. Click a button and a menu drops down? That's JavaScript doing the work. Once apps get bigger though, plain JavaScript starts becoming a pain to maintain, which is why most companies reach for something like React or Angular instead.</p>
                     <p>The <strong>back-end</strong> is where it starts getting a little trickier. It deals with logins, sending and receiving data, saving info, anything that needs to remember things between page loads. You'll write APIs as well, which are just URLs your front-end can call to grab or send data. So say you fill out a form and hit submit, the back-end picks up that data, makes sure nothing's missing or off, and saves it into a database like MySQL or MongoDB.</p>
                 </div>
+                
+                <div class="demo-card">
+                    <h3 class="demo-card-title">Demo: Architecture Flow</h3>
+                    <p class="demo-card-desc">This diagram illustrates the standard request/response cycle in a Full Stack application.</p>
+                    <div class="demo-visual architecture-flow">
+                        <div class="flow-step">
+                            <div class="flow-icon">🖥️</div>
+                            <div class="flow-label">Front-End (Client)</div>
+                        </div>
+                        <div class="flow-arrow">
+                            <span>HTTP Request ➔</span>
+                            <span style="color: var(--accent-color);">REST API</span>
+                            <span>← HTTP Response</span>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-icon">⚙️</div>
+                            <div class="flow-label">Back-End (Server)</div>
+                        </div>
+                        <div class="flow-arrow">
+                            <span>SQL Query ➔</span>
+                            <span>← Data Result</span>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-icon">🗄️</div>
+                            <div class="flow-label">Database</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -52,6 +81,34 @@
                     <p>One of the more useful things I took away from this module was the idea of <strong>semantic HTML</strong>. Older websites used to be full of <code>&lt;div&gt;</code> tags wrapping basically everything in sight, which worked fine but wasn't great. HTML5 sorted that out by adding proper tags like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code> and <code>&lt;footer&gt;</code>. They're not just there to make your code look tidier either, they help the browser and search engines work out what each section of the page is meant to be.</p>
                     <p>Why does any of this matter though? Mostly comes down to two things. The first one is <strong>accessibility</strong>. People who use screen readers depend on those tags so their software can read the page out in an order that makes sense. The second is <strong>SEO</strong>, short for Search Engine Optimization. Google scans these tags to understand what a page is about, and that has a knock-on effect on where it ends up in search results.</p>
                     <p>HTML can do more than just hold text on a page too. You can put together forms for user input with <code>&lt;input&gt;</code> and <code>&lt;form&gt;</code>, drop in a video using <code>&lt;video&gt;</code>, or lay out information in tables. All these elements end up forming what we call the DOM, short for Document Object Model. Think of it as a tree of every element on your page, and that tree is what CSS and JavaScript hook into when they need to style something or change it.</p>
+                </div>
+
+                <div class="demo-card">
+                    <h3 class="demo-card-title">Demo: Semantic HTML Layout</h3>
+                    <p class="demo-card-desc">A visual representation of how semantic tags structure a standard webpage layout. The snippet below matches the rendered blocks.</p>
+                    
+                    <div class="demo-visual semantic-layout">
+                        <header class="sem-box">&lt;header&gt;</header>
+                        <div class="sem-middle">
+                            <nav class="sem-box">&lt;nav&gt;</nav>
+                            <main class="sem-box">
+                                &lt;main&gt;
+                                <article class="sem-box inner">&lt;article&gt;</article>
+                            </main>
+                        </div>
+                        <footer class="sem-box">&lt;footer&gt;</footer>
+                    </div>
+                    
+                    <div class="code-snippet">
+<pre><code>&lt;header&gt;Site Header&lt;/header&gt;
+&lt;div class="content-wrapper"&gt;
+  &lt;nav&gt;Navigation Links&lt;/nav&gt;
+  &lt;main&gt;
+    &lt;article&gt;Main Content Article&lt;/article&gt;
+  &lt;/main&gt;
+&lt;/div&gt;
+&lt;footer&gt;Site Footer&lt;/footer&gt;</code></pre>
+                    </div>
                 </div>
 
             </div>
@@ -69,6 +126,32 @@
                     <p>Something I've grown pretty fond of is <strong>CSS variables</strong> (also called custom properties). You set up a colour or a value once at the top of your file, and then you can use it anywhere without retyping it. If you decide later to change the theme, you only need to update that one variable and everything else follows along. CSS also handles hover effects and basic animations, which means you can add a bit of movement or feedback to your page without writing any JavaScript at all.</p>
                 </div>
 
+                <div class="demo-card">
+                    <h3 class="demo-card-title">Demo: Interactive Flexbox & Variables</h3>
+                    <p class="demo-card-desc">Hover over the container below to see CSS Flexbox properties and CSS variables animate the layout dynamically.</p>
+                    
+                    <div class="demo-visual css-interactive-demo">
+                        <div class="flex-box box-1">1</div>
+                        <div class="flex-box box-2">2</div>
+                        <div class="flex-box box-3">3</div>
+                    </div>
+                    
+                    <div class="code-snippet">
+<pre><code>.css-interactive-demo {
+  display: flex;
+  gap: var(--demo-gap, 1rem);
+  flex-direction: row;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.css-interactive-demo:hover {
+  --demo-gap: 2.5rem;
+  flex-direction: row-reverse;
+  justify-content: center;
+}</code></pre>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -82,6 +165,47 @@
                     <p>What it's best known for is the <strong>grid system</strong>. The page gets split into 12 invisible columns, and you decide how many each element takes up. Say you want two boxes side by side at equal widths, you put <code>col-md-6</code> on each (because 6 plus 6 makes 12, which checks out). The nice bit is, it handles being responsive for you. On a phone, those two boxes will automatically stack one on top of the other, no extra CSS needed from your side.</p>
                     <p>Bootstrap also comes packed with <strong>components</strong> that are already built for you. Navbars, buttons, cards, modals (which are basically pop-ups), dropdown menus, the lot. You don't need to style any of them yourself. Just throw the right class onto the element and it already looks decent. They behave the same way across browsers too, which sounds like a small thing until you've spent half a day trying to figure out why a button looks wrong in Safari.</p>
                     <p>With Bootstrap 5 they introduced a whole heap of <strong>utility classes</strong>, for stuff like margins, padding, text alignment, colours and so on. Instead of writing a full CSS rule just to bump up some padding, you can stick something like <code>p-3</code> straight onto the element itself. Not everyone is a fan of doing things this way since your HTML can start looking a bit messy, but when you're prototyping it's hard to argue with how quick it makes things. Under the hood, Bootstrap is built using Sass, so if you want to dig in and tweak the default fonts or colours you can do that too.</p>
+                </div>
+
+                <div class="demo-card">
+                    <h3 class="demo-card-title">Demo: Bootstrap Grid & Components</h3>
+                    <p class="demo-card-desc">This section uses real Bootstrap classes to create a responsive layout that stacks on mobile devices.</p>
+                    
+                    <div class="demo-visual">
+                        <div class="container-fluid px-0">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-0 shadow-sm" style="border-radius: 12px; overflow: hidden;">
+                                        <div class="card-body p-4">
+                                            <h5 class="card-title fw-bold" style="font-family: 'Syne', sans-serif;">Bootstrap Card 1</h5>
+                                            <p class="card-text text-muted">Uses <code>col-md-6</code>. Takes up half the row on medium screens and up.</p>
+                                            <button class="btn btn-dark rounded-pill px-4 py-2" style="font-family: 'Syne', sans-serif; font-weight: bold;">Action</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-0 shadow-sm text-white" style="background-color: var(--accent-color); border-radius: 12px; overflow: hidden;">
+                                        <div class="card-body p-4">
+                                            <h5 class="card-title fw-bold text-white" style="font-family: 'Syne', sans-serif;">Bootstrap Card 2</h5>
+                                            <p class="card-text">Stacks automatically under Card 1 on smaller mobile screens.</p>
+                                            <button class="btn btn-outline-light rounded-pill px-4 py-2" style="font-family: 'Syne', sans-serif; font-weight: bold;">Explore</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-snippet">
+<pre><code>&lt;div class="row g-3"&gt;
+  &lt;div class="col-md-6"&gt;
+    &lt;div class="card border-0 shadow-sm"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col-md-6"&gt;
+    &lt;div class="card bg-dark text-white"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
                 </div>
 
             </div>
@@ -99,11 +223,61 @@
                     <p>One of the best things about JavaScript these days is that it's not just stuck inside the browser anymore. Thanks to <strong>Node.js</strong>, you can run JavaScript on a server too, which means the same language can power your front-end and your back-end. On top of that you've got frameworks like <strong>React</strong>, <strong>Angular</strong> and <strong>Vue</strong>, which make building big, complicated web apps way more manageable. I've only just started getting into React myself, and yeah it's a bit of a step away from plain JS, but I can already see why people lean on it for the bigger projects.</p>
                 </div>
 
+                <div class="demo-card">
+                    <h3 class="demo-card-title">Demo: Async Data Fetching</h3>
+                    <p class="demo-card-desc">Click the button to fetch a random user from a public API using <code>async/await</code> and update the DOM.</p>
+                    
+                    <div class="demo-visual js-widget">
+                        <button id="fetch-user-btn" class="custom-btn">Fetch Random User</button>
+                        <div id="user-result" class="js-result-box">
+                            <span class="placeholder-text">Waiting for interaction...</span>
+                        </div>
+                    </div>
+                    
+                    <div class="code-snippet">
+<pre><code>document.getElementById('fetch-user-btn').addEventListener('click', async () => {
+  const randomId = Math.floor(Math.random() * 10) + 1;
+  const res = await fetch(`https://jsonplaceholder.typicode.com/users/${randomId}`);
+  const data = await res.json();
+  
+  document.getElementById('user-result').innerHTML = 
+    `&lt;h4&gt;${data.name}&lt;/h4&gt;&lt;p&gt;Email: ${data.email}&lt;/p&gt;`;
+});</code></pre>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
 
-
-
+    <script>
+        document.getElementById('fetch-user-btn')?.addEventListener('click', async () => {
+            const btn = document.getElementById('fetch-user-btn');
+            const resultBox = document.getElementById('user-result');
+            
+            btn.textContent = 'Fetching...';
+            btn.disabled = true;
+            
+            try {
+                const randomId = Math.floor(Math.random() * 10) + 1;
+                const res = await fetch(`https://jsonplaceholder.typicode.com/users/${randomId}`);
+                if (!res.ok) throw new Error('Network response was not ok');
+                const data = await res.json();
+                
+                resultBox.innerHTML = `
+                    <div style="animation: fadeIn 0.5s ease; width: 100%;">
+                        <h4 style="margin-bottom: 0.5rem; color: var(--text-primary); font-family: 'Syne', sans-serif;">${data.name}</h4>
+                        <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;"><strong>Email:</strong> ${data.email}</p>
+                        <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;"><strong>Company:</strong> ${data.company.name}</p>
+                    </div>
+                `;
+            } catch (error) {
+                resultBox.innerHTML = `<span style="color: var(--accent-color);">Failed to fetch data.</span>`;
+            } finally {
+                btn.textContent = 'Fetch Random User';
+                btn.disabled = false;
+            }
+        });
+    </script>
 </body>
 </html>

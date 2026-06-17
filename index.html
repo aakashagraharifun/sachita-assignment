@@ -42,29 +42,35 @@
                 </div>
                 
                 <div class="demo-card">
-                    <h3 class="demo-card-title">Demo: Architecture Flow</h3>
-                    <p class="demo-card-desc">This diagram illustrates the standard request/response cycle in a Full Stack application.</p>
-                    <div class="demo-visual architecture-flow">
-                        <div class="flow-step">
-                            <div class="flow-icon">🖥️</div>
-                            <div class="flow-label">Front-End (Client)</div>
+                    <h3 class="demo-card-title">Demo: Interactive Request Flow</h3>
+                    <p class="demo-card-desc">Hit "Send Request" to watch a request travel from the front-end to the server and database, then come back with the response.</p>
+                    <div class="demo-visual architecture-flow-wrapper">
+                        <div class="architecture-flow" id="arch-flow">
+                            <div class="flow-step" id="step-frontend">
+                                <div class="flow-icon">🖥️</div>
+                                <div class="flow-label">Front-End</div>
+                            </div>
+                            <div class="flow-track" id="track-1">
+                                <div class="flow-packet" id="packet-1"></div>
+                            </div>
+                            <div class="flow-step" id="step-backend">
+                                <div class="flow-icon">⚙️</div>
+                                <div class="flow-label">Back-End</div>
+                            </div>
+                            <div class="flow-track" id="track-2">
+                                <div class="flow-packet" id="packet-2"></div>
+                            </div>
+                            <div class="flow-step" id="step-database">
+                                <div class="flow-icon">🗄️</div>
+                                <div class="flow-label">Database</div>
+                            </div>
                         </div>
-                        <div class="flow-arrow">
-                            <span>HTTP Request ➔</span>
-                            <span style="color: var(--accent-color);">REST API</span>
-                            <span>← HTTP Response</span>
-                        </div>
-                        <div class="flow-step">
-                            <div class="flow-icon">⚙️</div>
-                            <div class="flow-label">Back-End (Server)</div>
-                        </div>
-                        <div class="flow-arrow">
-                            <span>SQL Query ➔</span>
-                            <span>← Data Result</span>
-                        </div>
-                        <div class="flow-step">
-                            <div class="flow-icon">🗄️</div>
-                            <div class="flow-label">Database</div>
+                        <div class="flow-controls">
+                            <button id="send-request-btn" class="custom-btn">Send Request</button>
+                            <div class="flow-status" id="flow-status">
+                                <span class="status-dot"></span>
+                                <span id="flow-status-text">Idle — ready to send a request.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,30 +90,51 @@
                 </div>
 
                 <div class="demo-card">
-                    <h3 class="demo-card-title">Demo: Semantic HTML Layout</h3>
-                    <p class="demo-card-desc">A visual representation of how semantic tags structure a standard webpage layout. The snippet below matches the rendered blocks.</p>
-                    
-                    <div class="demo-visual semantic-layout">
-                        <header class="sem-box">&lt;header&gt;</header>
-                        <div class="sem-middle">
-                            <nav class="sem-box">&lt;nav&gt;</nav>
-                            <main class="sem-box">
-                                &lt;main&gt;
-                                <article class="sem-box inner">&lt;article&gt;</article>
+                    <h3 class="demo-card-title">Demo: A Real Semantic Mini-Page</h3>
+                    <p class="demo-card-desc">A tiny working web page built using only semantic HTML tags. The code below is exactly what's rendered above.</p>
+
+                    <div class="demo-visual mini-site-wrapper">
+                        <div class="mini-site">
+                            <header class="mini-site-header">
+                                <a href="#" class="mini-site-logo">Brewline</a>
+                                <nav class="mini-site-nav">
+                                    <a href="#">Menu</a>
+                                    <a href="#">Locations</a>
+                                    <a href="#">About</a>
+                                    <a href="#">Contact</a>
+                                </nav>
+                            </header>
+                            <main class="mini-site-main">
+                                <h4>Coffee, brewed with care.</h4>
+                                <p>We roast small batches every morning and ship straight from our café in Camden. Order a bag online or stop by to see how the beans get to your cup.</p>
+                                <a href="#" class="mini-site-cta">Shop the menu</a>
                             </main>
+                            <footer class="mini-site-footer">
+                                <span>&copy; 2026 Brewline Coffee Co.</span>
+                                <span>Made in London</span>
+                            </footer>
                         </div>
-                        <footer class="sem-box">&lt;footer&gt;</footer>
                     </div>
-                    
+
                     <div class="code-snippet">
-<pre><code>&lt;header&gt;Site Header&lt;/header&gt;
-&lt;div class="content-wrapper"&gt;
-  &lt;nav&gt;Navigation Links&lt;/nav&gt;
-  &lt;main&gt;
-    &lt;article&gt;Main Content Article&lt;/article&gt;
-  &lt;/main&gt;
-&lt;/div&gt;
-&lt;footer&gt;Site Footer&lt;/footer&gt;</code></pre>
+<pre><code>&lt;header&gt;
+  &lt;a href="#" class="logo"&gt;Brewline&lt;/a&gt;
+  &lt;nav&gt;
+    &lt;a href="#"&gt;Menu&lt;/a&gt;
+    &lt;a href="#"&gt;Locations&lt;/a&gt;
+    &lt;a href="#"&gt;About&lt;/a&gt;
+    &lt;a href="#"&gt;Contact&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;h1&gt;Coffee, brewed with care.&lt;/h1&gt;
+  &lt;p&gt;We roast small batches every morning...&lt;/p&gt;
+  &lt;a href="#"&gt;Shop the menu&lt;/a&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+  &lt;span&gt;&amp;copy; 2026 Brewline Coffee Co.&lt;/span&gt;
+  &lt;span&gt;Made in London&lt;/span&gt;
+&lt;/footer&gt;</code></pre>
                     </div>
                 </div>
 
@@ -127,27 +154,51 @@
                 </div>
 
                 <div class="demo-card">
-                    <h3 class="demo-card-title">Demo: Interactive Flexbox & Variables</h3>
-                    <p class="demo-card-desc">Hover over the container below to see CSS Flexbox properties and CSS variables animate the layout dynamically.</p>
-                    
-                    <div class="demo-visual css-interactive-demo">
-                        <div class="flex-box box-1">1</div>
-                        <div class="flex-box box-2">2</div>
-                        <div class="flex-box box-3">3</div>
+                    <h3 class="demo-card-title">Demo: Pricing Card Component</h3>
+                    <p class="demo-card-desc">A real pricing card built with Flexbox for layout, CSS variables for theming, and a hover lift to give it a bit of life. Hover the card to see the effect.</p>
+
+                    <div class="demo-visual pricing-card-wrapper">
+                        <article class="pricing-card">
+                            <header class="pricing-card-header">
+                                <span class="pricing-badge">Most popular</span>
+                                <h4 class="pricing-tier">Pro</h4>
+                                <p class="pricing-desc">For freelancers shipping real projects.</p>
+                            </header>
+                            <div class="pricing-amount">
+                                <span class="pricing-currency">£</span>
+                                <span class="pricing-value">12</span>
+                                <span class="pricing-period">/ month</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li>Unlimited projects</li>
+                                <li>Custom domain hosting</li>
+                                <li>Priority email support</li>
+                                <li>Analytics dashboard</li>
+                            </ul>
+                            <a href="#" class="pricing-cta">Choose Pro</a>
+                        </article>
                     </div>
-                    
+
                     <div class="code-snippet">
-<pre><code>.css-interactive-demo {
+<pre><code>.pricing-card {
+  --card-bg: #ffffff;
+  --card-accent: #d33c15;
+  --card-radius: 16px;
+
   display: flex;
-  gap: var(--demo-gap, 1rem);
-  flex-direction: row;
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  flex-direction: column;
+  gap: 1.25rem;
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.css-interactive-demo:hover {
-  --demo-gap: 2.5rem;
-  flex-direction: row-reverse;
-  justify-content: center;
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(211, 60, 21, 0.18);
+  border-color: var(--card-accent);
 }</code></pre>
                     </div>
                 </div>
@@ -168,43 +219,57 @@
                 </div>
 
                 <div class="demo-card">
-                    <h3 class="demo-card-title">Demo: Bootstrap Grid & Components</h3>
-                    <p class="demo-card-desc">This section uses real Bootstrap classes to create a responsive layout that stacks on mobile devices.</p>
-                    
-                    <div class="demo-visual">
-                        <div class="container-fluid px-0">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="card h-100 border-0 shadow-sm" style="border-radius: 12px; overflow: hidden;">
-                                        <div class="card-body p-4">
-                                            <h5 class="card-title fw-bold" style="font-family: 'Syne', sans-serif;">Bootstrap Card 1</h5>
-                                            <p class="card-text text-muted">Uses <code>col-md-6</code>. Takes up half the row on medium screens and up.</p>
-                                            <button class="btn btn-dark rounded-pill px-4 py-2" style="font-family: 'Syne', sans-serif; font-weight: bold;">Action</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card h-100 border-0 shadow-sm text-white" style="background-color: var(--accent-color); border-radius: 12px; overflow: hidden;">
-                                        <div class="card-body p-4">
-                                            <h5 class="card-title fw-bold text-white" style="font-family: 'Syne', sans-serif;">Bootstrap Card 2</h5>
-                                            <p class="card-text">Stacks automatically under Card 1 on smaller mobile screens.</p>
-                                            <button class="btn btn-outline-light rounded-pill px-4 py-2" style="font-family: 'Syne', sans-serif; font-weight: bold;">Explore</button>
-                                        </div>
-                                    </div>
-                                </div>
+                    <h3 class="demo-card-title">Demo: Bootstrap Contact Form</h3>
+                    <p class="demo-card-desc">A working contact form built with Bootstrap's grid and form classes. Name and email sit side by side on desktop using <code>col-md-6</code>, and stack on mobile automatically.</p>
+
+                    <div class="demo-visual bootstrap-form-wrapper">
+                        <form id="bootstrap-contact-form" class="row g-3" novalidate>
+                            <div class="col-md-6">
+                                <label for="bs-name" class="form-label">Full name</label>
+                                <input type="text" class="form-control" id="bs-name" placeholder="Jane Doe" required>
                             </div>
-                        </div>
+                            <div class="col-md-6">
+                                <label for="bs-email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="bs-email" placeholder="jane@example.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="bs-subject" class="form-label">Subject</label>
+                                <select class="form-select" id="bs-subject" required>
+                                    <option value="" selected disabled>Pick a topic...</option>
+                                    <option>General enquiry</option>
+                                    <option>Project work</option>
+                                    <option>Partnership</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="bs-message" class="form-label">Message</label>
+                                <textarea class="form-control" id="bs-message" rows="4" placeholder="Tell us a bit about what you need..." required></textarea>
+                            </div>
+                            <div class="col-12 d-flex align-items-center gap-3 flex-wrap">
+                                <button type="submit" class="btn btn-dark rounded-pill px-4 py-2 bs-submit-btn">Send message</button>
+                                <span id="bs-form-status" class="bs-form-status"></span>
+                            </div>
+                        </form>
                     </div>
-                    
+
                     <div class="code-snippet">
-<pre><code>&lt;div class="row g-3"&gt;
+<pre><code>&lt;form class="row g-3"&gt;
   &lt;div class="col-md-6"&gt;
-    &lt;div class="card border-0 shadow-sm"&gt;...&lt;/div&gt;
+    &lt;label class="form-label"&gt;Full name&lt;/label&gt;
+    &lt;input type="text" class="form-control"&gt;
   &lt;/div&gt;
   &lt;div class="col-md-6"&gt;
-    &lt;div class="card bg-dark text-white"&gt;...&lt;/div&gt;
+    &lt;label class="form-label"&gt;Email address&lt;/label&gt;
+    &lt;input type="email" class="form-control"&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+  &lt;div class="col-12"&gt;
+    &lt;label class="form-label"&gt;Message&lt;/label&gt;
+    &lt;textarea class="form-control" rows="4"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div class="col-12"&gt;
+    &lt;button class="btn btn-dark"&gt;Send message&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
                     </div>
                 </div>
 
@@ -224,24 +289,42 @@
                 </div>
 
                 <div class="demo-card">
-                    <h3 class="demo-card-title">Demo: Async Data Fetching</h3>
-                    <p class="demo-card-desc">Click the button to fetch a random user from a public API using <code>async/await</code> and update the DOM.</p>
-                    
-                    <div class="demo-visual js-widget">
-                        <button id="fetch-user-btn" class="custom-btn">Fetch Random User</button>
-                        <div id="user-result" class="js-result-box">
-                            <span class="placeholder-text">Waiting for interaction...</span>
-                        </div>
+                    <h3 class="demo-card-title">Demo: To-Do List</h3>
+                    <p class="demo-card-desc">A working to-do list using plain JavaScript. Add a task, click it to mark complete, or remove it. Every action lives in the DOM — no framework, no backend.</p>
+
+                    <div class="demo-visual js-todo">
+                        <form id="todo-form" class="todo-form">
+                            <input type="text" id="todo-input" class="todo-input" placeholder="Add a new task..." autocomplete="off" maxlength="80">
+                            <button type="submit" class="custom-btn todo-add-btn">Add</button>
+                        </form>
+                        <ul id="todo-list" class="todo-list"></ul>
+                        <p id="todo-empty" class="todo-empty">No tasks yet — add one above to get started.</p>
                     </div>
-                    
+
                     <div class="code-snippet">
-<pre><code>document.getElementById('fetch-user-btn').addEventListener('click', async () => {
-  const randomId = Math.floor(Math.random() * 10) + 1;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/users/${randomId}`);
-  const data = await res.json();
-  
-  document.getElementById('user-result').innerHTML = 
-    `&lt;h4&gt;${data.name}&lt;/h4&gt;&lt;p&gt;Email: ${data.email}&lt;/p&gt;`;
+<pre><code>const form = document.getElementById('todo-form');
+const input = document.getElementById('todo-input');
+const list = document.getElementById('todo-list');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const text = input.value.trim();
+  if (!text) return;
+
+  const li = document.createElement('li');
+  li.textContent = text;
+  li.addEventListener('click', () =&gt; li.classList.toggle('done'));
+
+  const del = document.createElement('button');
+  del.textContent = '×';
+  del.addEventListener('click', (e) =&gt; {
+    e.stopPropagation();
+    li.remove();
+  });
+
+  li.appendChild(del);
+  list.appendChild(li);
+  input.value = '';
 });</code></pre>
                     </div>
                 </div>
@@ -251,33 +334,137 @@
     </main>
 
     <script>
-        document.getElementById('fetch-user-btn')?.addEventListener('click', async () => {
-            const btn = document.getElementById('fetch-user-btn');
-            const resultBox = document.getElementById('user-result');
-            
-            btn.textContent = 'Fetching...';
-            btn.disabled = true;
-            
-            try {
-                const randomId = Math.floor(Math.random() * 10) + 1;
-                const res = await fetch(`https://jsonplaceholder.typicode.com/users/${randomId}`);
-                if (!res.ok) throw new Error('Network response was not ok');
-                const data = await res.json();
-                
-                resultBox.innerHTML = `
-                    <div style="animation: fadeIn 0.5s ease; width: 100%;">
-                        <h4 style="margin-bottom: 0.5rem; color: var(--text-primary); font-family: 'Syne', sans-serif;">${data.name}</h4>
-                        <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;"><strong>Email:</strong> ${data.email}</p>
-                        <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;"><strong>Company:</strong> ${data.company.name}</p>
-                    </div>
-                `;
-            } catch (error) {
-                resultBox.innerHTML = `<span style="color: var(--accent-color);">Failed to fetch data.</span>`;
-            } finally {
-                btn.textContent = 'Fetch Random User';
+        // ---- Section 1: Animated Full Stack Request Flow ----
+        (() => {
+            const btn = document.getElementById('send-request-btn');
+            if (!btn) return;
+            const statusText = document.getElementById('flow-status-text');
+            const statusDot = document.querySelector('#flow-status .status-dot');
+            const steps = {
+                frontend: document.getElementById('step-frontend'),
+                backend: document.getElementById('step-backend'),
+                database: document.getElementById('step-database'),
+            };
+            const packets = [document.getElementById('packet-1'), document.getElementById('packet-2')];
+
+            const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+            const setStatus = (text, state) => {
+                statusText.textContent = text;
+                statusDot.dataset.state = state;
+            };
+            const clearActive = () => Object.values(steps).forEach((s) => s.classList.remove('is-active'));
+            const activate = (key) => {
+                clearActive();
+                steps[key].classList.add('is-active');
+            };
+            const sendPacket = (packetEl, direction) => {
+                packetEl.classList.remove('travel-forward', 'travel-back');
+                void packetEl.offsetWidth;
+                packetEl.classList.add(direction === 'forward' ? 'travel-forward' : 'travel-back');
+            };
+
+            btn.addEventListener('click', async () => {
+                btn.disabled = true;
+                btn.textContent = 'Sending...';
+
+                setStatus('Sending request from front-end...', 'pending');
+                activate('frontend');
+                sendPacket(packets[0], 'forward');
+                await wait(900);
+
+                setStatus('Back-end received request. Processing...', 'pending');
+                activate('backend');
+                await wait(700);
+
+                setStatus('Querying database...', 'pending');
+                sendPacket(packets[1], 'forward');
+                await wait(900);
+                activate('database');
+                await wait(600);
+
+                setStatus('Database returned rows. Sending back...', 'pending');
+                activate('backend');
+                sendPacket(packets[1], 'back');
+                await wait(900);
+
+                setStatus('Response received. Rendering on front-end.', 'success');
+                activate('frontend');
+                sendPacket(packets[0], 'back');
+                await wait(900);
+
+                await wait(600);
+                clearActive();
+                setStatus('Idle — ready to send another request.', 'idle');
                 btn.disabled = false;
-            }
-        });
+                btn.textContent = 'Send Request';
+            });
+        })();
+
+        // ---- Section 4: Bootstrap form submit feedback ----
+        (() => {
+            const form = document.getElementById('bootstrap-contact-form');
+            if (!form) return;
+            const status = document.getElementById('bs-form-status');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (!form.checkValidity()) {
+                    status.textContent = 'Please fill in every field.';
+                    status.className = 'bs-form-status error';
+                    return;
+                }
+                status.textContent = 'Message sent — we\'ll get back to you soon.';
+                status.className = 'bs-form-status success';
+                form.reset();
+            });
+        })();
+
+        // ---- Section 5: To-Do List ----
+        (() => {
+            const form = document.getElementById('todo-form');
+            if (!form) return;
+            const input = document.getElementById('todo-input');
+            const list = document.getElementById('todo-list');
+            const empty = document.getElementById('todo-empty');
+
+            const refreshEmpty = () => {
+                empty.style.display = list.children.length === 0 ? 'block' : 'none';
+            };
+            refreshEmpty();
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const text = input.value.trim();
+                if (!text) return;
+
+                const li = document.createElement('li');
+                li.className = 'todo-item';
+
+                const label = document.createElement('span');
+                label.className = 'todo-text';
+                label.textContent = text;
+
+                const del = document.createElement('button');
+                del.type = 'button';
+                del.className = 'todo-delete';
+                del.setAttribute('aria-label', 'Delete task');
+                del.textContent = '×';
+
+                li.appendChild(label);
+                li.appendChild(del);
+
+                label.addEventListener('click', () => li.classList.toggle('done'));
+                del.addEventListener('click', (ev) => {
+                    ev.stopPropagation();
+                    li.remove();
+                    refreshEmpty();
+                });
+
+                list.appendChild(li);
+                input.value = '';
+                refreshEmpty();
+                input.focus();
+            });
+        })();
     </script>
 </body>
 </html>

@@ -3,468 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sachita's ePortfolio | Junior Full Stack Developer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Eventide — Book Your Next Experience</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="#intro">00. Intro</a></li>
-                <li><a href="#fullstack">01. Full Stack</a></li>
-                <li><a href="#html">02. HTML</a></li>
-                <li><a href="#css">03. CSS</a></li>
-                <li><a href="#bootstrap">04. Bootstrap</a></li>
-                <li><a href="#javascript">05. JavaScript</a></li>
-            </ul>
-        </div>
-    </nav>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#home">Eventide</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#mainNav" aria-controls="mainNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#book">Book Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-    <header id="intro">
-        <div class="container">
-            
-        </div>
+        <section id="home" class="hero">
+            <div class="container hero-inner">
+                <h1 class="hero-title">Book live events around Nepal.</h1>
+                <p class="hero-sub">Music, food, tech and more. Pick what you like and book your ticket online.</p>
+                <a href="#events" class="btn btn-primary btn-lg hero-cta">See Events</a>
+            </div>
+        </section>
     </header>
 
     <main>
-        <!-- Section 1: Full Stack -->
-        <section id="fullstack">
+        <section id="events" class="events-section">
             <div class="container">
-                <span class="section-number">01</span>
-                <h2>What is Full Stack Development?</h2>
-                <div class="content-block">
-                    <p>Full stack development is just a way of saying you can put together a whole website yourself, not only one bit of it. There's the <strong>front-end</strong> side, which is everything you actually see when you open a webpage, and then the <strong>back-end</strong>, which is all the server stuff going on in the background. Saving data, handling requests, that kind of thing.</p>
-                    <p>So when someone says they're a "full stack developer", what they really mean is they can switch between the two sides without losing the plot. They'll design the UI one minute and configure the database it connects to the next. Looking at job ads, you'll see a lot of them ask for a specific stack. The big one is <strong>MERN</strong> (that's MongoDB, Express, React and Node.js), and then there's <strong>LAMP</strong> (Linux, Apache, MySQL, PHP). My course covers MERN mostly, so that's the one I've gotten used to.</p>
-                    <p>On the <strong>front-end</strong> side, you're working with HTML for structure, CSS for the look of things, and JavaScript whenever you need something to actually react to a user. Click a button and a menu drops down? That's JavaScript doing the work. Once apps get bigger though, plain JavaScript starts becoming a pain to maintain, which is why most companies reach for something like React or Angular instead.</p>
-                    <p>The <strong>back-end</strong> is where it starts getting a little trickier. It deals with logins, sending and receiving data, saving info, anything that needs to remember things between page loads. You'll write APIs as well, which are just URLs your front-end can call to grab or send data. So say you fill out a form and hit submit, the back-end picks up that data, makes sure nothing's missing or off, and saves it into a database like MySQL or MongoDB.</p>
-                </div>
-                
-                <div class="demo-card">
-                    <h3 class="demo-card-title">Demo: Interactive Request Flow</h3>
-                    <p class="demo-card-desc">Hit "Send Request" to watch a request travel from the front-end to the server and database, then come back with the response.</p>
-                    <div class="demo-visual architecture-flow-wrapper">
-                        <div class="architecture-flow" id="arch-flow">
-                            <div class="flow-step" id="step-frontend">
-                                <div class="flow-icon">🖥️</div>
-                                <div class="flow-label">Front-End</div>
-                            </div>
-                            <div class="flow-track" id="track-1">
-                                <div class="flow-packet" id="packet-1"></div>
-                            </div>
-                            <div class="flow-step" id="step-backend">
-                                <div class="flow-icon">⚙️</div>
-                                <div class="flow-label">Back-End</div>
-                            </div>
-                            <div class="flow-track" id="track-2">
-                                <div class="flow-packet" id="packet-2"></div>
-                            </div>
-                            <div class="flow-step" id="step-database">
-                                <div class="flow-icon">🗄️</div>
-                                <div class="flow-label">Database</div>
-                            </div>
-                        </div>
-                        <div class="flow-controls">
-                            <button id="send-request-btn" class="custom-btn">Send Request</button>
-                            <div class="flow-status" id="flow-status">
-                                <span class="status-dot"></span>
-                                <span id="flow-status-text">Idle — ready to send a request.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 2: HTML -->
-        <section id="html">
-            <div class="container">
-                <span class="section-number">02</span>
-                <h2>HTML: The Skeleton</h2>
-                <div class="content-block">
-                    <p><strong>HTML</strong> is short for HyperText Markup Language, and it sits underneath pretty much every webpage on the internet. People sometimes call it a programming language but it really isn't one. You can't write loops or do maths with it. All it really does is let you mark up your content using tags. Want a heading on the page? <code>&lt;h1&gt;</code> does that. Need a paragraph? <code>&lt;p&gt;</code>. You get the idea.</p>
-                    <p>One of the more useful things I took away from this module was the idea of <strong>semantic HTML</strong>. Older websites used to be full of <code>&lt;div&gt;</code> tags wrapping basically everything in sight, which worked fine but wasn't great. HTML5 sorted that out by adding proper tags like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code> and <code>&lt;footer&gt;</code>. They're not just there to make your code look tidier either, they help the browser and search engines work out what each section of the page is meant to be.</p>
-                    <p>Why does any of this matter though? Mostly comes down to two things. The first one is <strong>accessibility</strong>. People who use screen readers depend on those tags so their software can read the page out in an order that makes sense. The second is <strong>SEO</strong>, short for Search Engine Optimization. Google scans these tags to understand what a page is about, and that has a knock-on effect on where it ends up in search results.</p>
-                    <p>HTML can do more than just hold text on a page too. You can put together forms for user input with <code>&lt;input&gt;</code> and <code>&lt;form&gt;</code>, drop in a video using <code>&lt;video&gt;</code>, or lay out information in tables. All these elements end up forming what we call the DOM, short for Document Object Model. Think of it as a tree of every element on your page, and that tree is what CSS and JavaScript hook into when they need to style something or change it.</p>
+                <div class="section-head">
+                    <h2>Upcoming Events</h2>
+                    <p class="section-sub">Use the search box to find an event.</p>
                 </div>
 
-                <div class="demo-card">
-                    <h3 class="demo-card-title">Demo: A Real Semantic Mini-Page</h3>
-                    <p class="demo-card-desc">A tiny working web page built using only semantic HTML tags. The code below is exactly what's rendered above.</p>
-
-                    <div class="demo-visual mini-site-wrapper">
-                        <div class="mini-site">
-                            <header class="mini-site-header">
-                                <a href="#" class="mini-site-logo">Brewline</a>
-                                <nav class="mini-site-nav">
-                                    <a href="#">Menu</a>
-                                    <a href="#">Locations</a>
-                                    <a href="#">About</a>
-                                    <a href="#">Contact</a>
-                                </nav>
-                            </header>
-                            <main class="mini-site-main">
-                                <h4>Coffee, brewed with care.</h4>
-                                <p>We roast small batches every morning and ship straight from our café in Camden. Order a bag online or stop by to see how the beans get to your cup.</p>
-                                <a href="#" class="mini-site-cta">Shop the menu</a>
-                            </main>
-                            <footer class="mini-site-footer">
-                                <span>&copy; 2026 Brewline Coffee Co.</span>
-                                <span>Made in London</span>
-                            </footer>
-                        </div>
-                    </div>
-
-                    <div class="code-snippet">
-<pre><code>&lt;header&gt;
-  &lt;a href="#" class="logo"&gt;Brewline&lt;/a&gt;
-  &lt;nav&gt;
-    &lt;a href="#"&gt;Menu&lt;/a&gt;
-    &lt;a href="#"&gt;Locations&lt;/a&gt;
-    &lt;a href="#"&gt;About&lt;/a&gt;
-    &lt;a href="#"&gt;Contact&lt;/a&gt;
-  &lt;/nav&gt;
-&lt;/header&gt;
-&lt;main&gt;
-  &lt;h1&gt;Coffee, brewed with care.&lt;/h1&gt;
-  &lt;p&gt;We roast small batches every morning...&lt;/p&gt;
-  &lt;a href="#"&gt;Shop the menu&lt;/a&gt;
-&lt;/main&gt;
-&lt;footer&gt;
-  &lt;span&gt;&amp;copy; 2026 Brewline Coffee Co.&lt;/span&gt;
-  &lt;span&gt;Made in London&lt;/span&gt;
-&lt;/footer&gt;</code></pre>
-                    </div>
+                <div class="search-wrap">
+                    <input type="text" id="event-search" class="form-control form-control-lg"
+                           placeholder="Search events by name…" aria-label="Search events">
                 </div>
 
-            </div>
-        </section>
-
-        <!-- Section 3: CSS -->
-        <section id="css">
-            <div class="container">
-                <span class="section-number">03</span>
-                <h2>CSS: The Aesthetic</h2>
-                <div class="content-block">
-                    <p><strong>CSS</strong> is short for Cascading Style Sheets. The way I think about it, if HTML is the skeleton of a page, then CSS is what puts the clothes on it. Without it, every site on the internet would basically be plain black text on a white background and a bunch of bright blue links everywhere, which would get tired pretty quick. CSS takes care of all the visual side of things. The colours, the fonts, the spacing, how big things are, where they sit on the page, all of it.</p>
-                    <p>The whole point of CSS is to keep design separate from content. Your HTML stays focused on what the page actually says and how it's structured, and your CSS handles how that all appears on screen. That split turns out to be really handy in practice. If you ever want to give your website a completely new look, you can just swap the CSS file out and never touch the HTML.</p>
-                    <p>Two tools I've been using a lot lately are <strong>Flexbox</strong> and <strong>CSS Grid</strong>. Flexbox is the one I reach for when I need to line things up in one direction, like a row of buttons in a nav bar. Grid works better for a full page layout where you need rows and columns to work together. To make sites responsive, we use <strong>media queries</strong>. These let the layout shift around depending on whether someone is on a phone, a tablet, or a laptop.</p>
-                    <p>Something I've grown pretty fond of is <strong>CSS variables</strong> (also called custom properties). You set up a colour or a value once at the top of your file, and then you can use it anywhere without retyping it. If you decide later to change the theme, you only need to update that one variable and everything else follows along. CSS also handles hover effects and basic animations, which means you can add a bit of movement or feedback to your page without writing any JavaScript at all.</p>
-                </div>
-
-                <div class="demo-card">
-                    <h3 class="demo-card-title">Demo: Pricing Card Component</h3>
-                    <p class="demo-card-desc">A real pricing card built with Flexbox for layout, CSS variables for theming, and a hover lift to give it a bit of life. Hover the card to see the effect.</p>
-
-                    <div class="demo-visual pricing-card-wrapper">
-                        <article class="pricing-card">
-                            <header class="pricing-card-header">
-                                <span class="pricing-badge">Most popular</span>
-                                <h4 class="pricing-tier">Pro</h4>
-                                <p class="pricing-desc">For freelancers shipping real projects.</p>
-                            </header>
-                            <div class="pricing-amount">
-                                <span class="pricing-currency">£</span>
-                                <span class="pricing-value">12</span>
-                                <span class="pricing-period">/ month</span>
-                            </div>
-                            <ul class="pricing-features">
-                                <li>Unlimited projects</li>
-                                <li>Custom domain hosting</li>
-                                <li>Priority email support</li>
-                                <li>Analytics dashboard</li>
-                            </ul>
-                            <a href="#" class="pricing-cta">Choose Pro</a>
+                <div class="row g-4" id="event-grid">
+                    <div class="col-md-6 col-lg-4">
+                        <article class="event-card" data-name="Himalayan Sunset Music Festival">
+                            <h3 class="event-card-title">Himalayan Sunset Music Festival</h3>
+                            <p class="event-card-meta">12 July 2026, 6:00 PM</p>
+                            <p class="event-card-meta">Phewa Lakeside, Pokhara</p>
+                            <p class="event-card-price">Rs. 1500</p>
+                            <button class="btn btn-outline-primary book-trigger"
+                                    data-event="Himalayan Sunset Music Festival" data-price="1500">Book Now</button>
                         </article>
                     </div>
 
-                    <div class="code-snippet">
-<pre><code>.pricing-card {
-  --card-bg: #ffffff;
-  --card-accent: #d33c15;
-  --card-radius: 16px;
+                    <div class="col-md-6 col-lg-4">
+                        <article class="event-card" data-name="Kathmandu Tech Conference">
+                            <h3 class="event-card-title">Kathmandu Tech Conference</h3>
+                            <p class="event-card-meta">23 August 2026, 9:00 AM</p>
+                            <p class="event-card-meta">Hyatt Regency, Boudha, Kathmandu</p>
+                            <p class="event-card-price">Rs. 2500</p>
+                            <button class="btn btn-outline-primary book-trigger"
+                                    data-event="Kathmandu Tech Conference" data-price="2500">Book Now</button>
+                        </article>
+                    </div>
 
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  background: var(--card-bg);
-  border-radius: var(--card-radius);
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+                    <div class="col-md-6 col-lg-4">
+                        <article class="event-card" data-name="Thamel Street Food Expo">
+                            <h3 class="event-card-title">Thamel Street Food Expo</h3>
+                            <p class="event-card-meta">5 September 2026, 12:00 PM</p>
+                            <p class="event-card-meta">Bhrikutimandap, Kathmandu</p>
+                            <p class="event-card-price">Rs. 500</p>
+                            <button class="btn btn-outline-primary book-trigger"
+                                    data-event="Thamel Street Food Expo" data-price="500">Book Now</button>
+                        </article>
+                    </div>
 
-.pricing-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(211, 60, 21, 0.18);
-  border-color: var(--card-accent);
-}</code></pre>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="event-card" data-name="Patan Comedy Night">
+                            <h3 class="event-card-title">Patan Comedy Night</h3>
+                            <p class="event-card-meta">18 September 2026, 8:00 PM</p>
+                            <p class="event-card-meta">Patan Durbar Square, Lalitpur</p>
+                            <p class="event-card-price">Rs. 800</p>
+                            <button class="btn btn-outline-primary book-trigger"
+                                    data-event="Patan Comedy Night" data-price="800">Book Now</button>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <article class="event-card" data-name="Bhaktapur Vintage Film Night">
+                            <h3 class="event-card-title">Bhaktapur Vintage Film Night</h3>
+                            <p class="event-card-meta">2 October 2026, 7:30 PM</p>
+                            <p class="event-card-meta">Bhaktapur Durbar Square, Bhaktapur</p>
+                            <p class="event-card-price">Rs. 400</p>
+                            <button class="btn btn-outline-primary book-trigger"
+                                    data-event="Bhaktapur Vintage Film Night" data-price="400">Book Now</button>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <article class="event-card" data-name="Chitwan Autumn Art Walk">
+                            <h3 class="event-card-title">Chitwan Autumn Art Walk</h3>
+                            <p class="event-card-meta">17 October 2026, 10:00 AM</p>
+                            <p class="event-card-meta">Sauraha Riverside, Chitwan</p>
+                            <p class="event-card-price">Rs. 300</p>
+                            <button class="btn btn-outline-primary book-trigger"
+                                    data-event="Chitwan Autumn Art Walk" data-price="300">Book Now</button>
+                        </article>
                     </div>
                 </div>
 
+                <p id="no-results" class="no-results d-none">No events match that search — try a different word.</p>
             </div>
         </section>
 
-        <!-- Section 4: Bootstrap -->
-        <section id="bootstrap">
+        <section id="book" class="booking-section">
             <div class="container">
-                <span class="section-number">04</span>
-                <h2>Bootstrap Framework</h2>
-                <div class="content-block">
-                    <p><strong>Bootstrap</strong> is a CSS framework that started out at Twitter, put together by a couple of developers working there. The thinking behind it is actually pretty straightforward. Instead of sitting there writing CSS from scratch every time you build a website, Bootstrap hands you a load of ready-made classes that you just chuck onto your elements. It speeds things up massively, especially when you're putting something together under time pressure.</p>
-                    <p>What it's best known for is the <strong>grid system</strong>. The page gets split into 12 invisible columns, and you decide how many each element takes up. Say you want two boxes side by side at equal widths, you put <code>col-md-6</code> on each (because 6 plus 6 makes 12, which checks out). The nice bit is, it handles being responsive for you. On a phone, those two boxes will automatically stack one on top of the other, no extra CSS needed from your side.</p>
-                    <p>Bootstrap also comes packed with <strong>components</strong> that are already built for you. Navbars, buttons, cards, modals (which are basically pop-ups), dropdown menus, the lot. You don't need to style any of them yourself. Just throw the right class onto the element and it already looks decent. They behave the same way across browsers too, which sounds like a small thing until you've spent half a day trying to figure out why a button looks wrong in Safari.</p>
-                    <p>With Bootstrap 5 they introduced a whole heap of <strong>utility classes</strong>, for stuff like margins, padding, text alignment, colours and so on. Instead of writing a full CSS rule just to bump up some padding, you can stick something like <code>p-3</code> straight onto the element itself. Not everyone is a fan of doing things this way since your HTML can start looking a bit messy, but when you're prototyping it's hard to argue with how quick it makes things. Under the hood, Bootstrap is built using Sass, so if you want to dig in and tweak the default fonts or colours you can do that too.</p>
+                <div class="section-head">
+                    <h2>Book Your Tickets</h2>
+                    <p class="section-sub">Fill in the form to confirm your booking.</p>
                 </div>
 
-                <div class="demo-card">
-                    <h3 class="demo-card-title">Demo: Bootstrap Contact Form</h3>
-                    <p class="demo-card-desc">A working contact form built with Bootstrap's grid and form classes. Name and email sit side by side on desktop using <code>col-md-6</code>, and stack on mobile automatically.</p>
+                <form id="booking-form" class="booking-form" novalidate>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="full-name" class="form-label">Full name</label>
+                            <input type="text" id="full-name" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
 
-                    <div class="demo-visual bootstrap-form-wrapper">
-                        <form id="bootstrap-contact-form" class="row g-3" novalidate>
-                            <div class="col-md-6">
-                                <label for="bs-name" class="form-label">Full name</label>
-                                <input type="text" class="form-control" id="bs-name" placeholder="Jane Doe" required>
+                        <div class="col-md-6">
+                            <label for="event-select" class="form-label">Choose an event</label>
+                            <select id="event-select" class="form-select" required>
+                                <option value="" data-price="0">Select an event…</option>
+                                <option value="Himalayan Sunset Music Festival" data-price="1500">Himalayan Sunset Music Festival — Rs. 1500</option>
+                                <option value="Kathmandu Tech Conference" data-price="2500">Kathmandu Tech Conference — Rs. 2500</option>
+                                <option value="Thamel Street Food Expo" data-price="500">Thamel Street Food Expo — Rs. 500</option>
+                                <option value="Patan Comedy Night" data-price="800">Patan Comedy Night — Rs. 800</option>
+                                <option value="Bhaktapur Vintage Film Night" data-price="400">Bhaktapur Vintage Film Night — Rs. 400</option>
+                                <option value="Chitwan Autumn Art Walk" data-price="300">Chitwan Autumn Art Walk — Rs. 300</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="quantity" class="form-label">Tickets</label>
+                            <input type="number" id="quantity" class="form-control" min="1" max="10" value="1">
+                        </div>
+
+                        <div class="col-12">
+                            <div class="total-box">
+                                <span>Live total</span>
+                                <span class="total-value" id="total-value">Rs. 0.00</span>
                             </div>
-                            <div class="col-md-6">
-                                <label for="bs-email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="bs-email" placeholder="jane@example.com" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="bs-subject" class="form-label">Subject</label>
-                                <select class="form-select" id="bs-subject" required>
-                                    <option value="" selected disabled>Pick a topic...</option>
-                                    <option>General enquiry</option>
-                                    <option>Project work</option>
-                                    <option>Partnership</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <label for="bs-message" class="form-label">Message</label>
-                                <textarea class="form-control" id="bs-message" rows="4" placeholder="Tell us a bit about what you need..." required></textarea>
-                            </div>
-                            <div class="col-12 d-flex align-items-center gap-3 flex-wrap">
-                                <button type="submit" class="btn btn-dark rounded-pill px-4 py-2 bs-submit-btn">Send message</button>
-                                <span id="bs-form-status" class="bs-form-status"></span>
-                            </div>
-                        </form>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Confirm Booking</button>
+                        </div>
                     </div>
-
-                    <div class="code-snippet">
-<pre><code>&lt;form class="row g-3"&gt;
-  &lt;div class="col-md-6"&gt;
-    &lt;label class="form-label"&gt;Full name&lt;/label&gt;
-    &lt;input type="text" class="form-control"&gt;
-  &lt;/div&gt;
-  &lt;div class="col-md-6"&gt;
-    &lt;label class="form-label"&gt;Email address&lt;/label&gt;
-    &lt;input type="email" class="form-control"&gt;
-  &lt;/div&gt;
-  &lt;div class="col-12"&gt;
-    &lt;label class="form-label"&gt;Message&lt;/label&gt;
-    &lt;textarea class="form-control" rows="4"&gt;&lt;/textarea&gt;
-  &lt;/div&gt;
-  &lt;div class="col-12"&gt;
-    &lt;button class="btn btn-dark"&gt;Send message&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/form&gt;</code></pre>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Section 5: JavaScript -->
-        <section id="javascript">
-            <div class="container">
-                <span class="section-number">05</span>
-                <h2>JavaScript: The Behavior</h2>
-                <div class="content-block">
-                    <p><strong>JavaScript</strong> is the thing that gives a website life. HTML lays out the structure, CSS dresses it up, but without JavaScript nothing on the page would do anything when you click or type. It's a proper programming language in its own right. You can write functions, run loops, store values in variables, all the usual stuff. And the nice bit is, every browser these days comes with a JavaScript engine built in, so your code just runs straight away.</p>
-                    <p>The main thing JavaScript does on a webpage is <strong>mess with the DOM</strong>. The DOM is basically how the browser sees your HTML, laid out as a tree of objects you can talk to in code. With JavaScript, you can grab any element you want and change it. Maybe you're updating the text inside a paragraph, hiding a section that was visible before, switching a button to a different colour when someone clicks it, or creating brand new elements out of thin air. It also keeps an eye out for events, so the second a user clicks something or types into a field, your code is ready to react.</p>
-                    <p>Honestly, the one concept that took me a while to properly get my head around was <strong>asynchronous JavaScript</strong>. Sometimes you need to pull data from a server (say, loading posts from an API), and obviously you don't want your webpage to freeze up while it waits for a response. JavaScript deals with this using Promises, but there's a much nicer way of writing it called <code>async/await</code> that's a lot less of a headache to read. For actually sending those requests off, we tend to use the Fetch API. That's the reason modern websites can pull in fresh content without making you sit through a full page reload every time.</p>
-                    <p>One of the best things about JavaScript these days is that it's not just stuck inside the browser anymore. Thanks to <strong>Node.js</strong>, you can run JavaScript on a server too, which means the same language can power your front-end and your back-end. On top of that you've got frameworks like <strong>React</strong>, <strong>Angular</strong> and <strong>Vue</strong>, which make building big, complicated web apps way more manageable. I've only just started getting into React myself, and yeah it's a bit of a step away from plain JS, but I can already see why people lean on it for the bigger projects.</p>
-                </div>
-
-                <div class="demo-card">
-                    <h3 class="demo-card-title">Demo: To-Do List</h3>
-                    <p class="demo-card-desc">A working to-do list using plain JavaScript. Add a task, click it to mark complete, or remove it. Every action lives in the DOM — no framework, no backend.</p>
-
-                    <div class="demo-visual js-todo">
-                        <form id="todo-form" class="todo-form">
-                            <input type="text" id="todo-input" class="todo-input" placeholder="Add a new task..." autocomplete="off" maxlength="80">
-                            <button type="submit" class="custom-btn todo-add-btn">Add</button>
-                        </form>
-                        <ul id="todo-list" class="todo-list"></ul>
-                        <p id="todo-empty" class="todo-empty">No tasks yet — add one above to get started.</p>
-                    </div>
-
-                    <div class="code-snippet">
-<pre><code>const form = document.getElementById('todo-form');
-const input = document.getElementById('todo-input');
-const list = document.getElementById('todo-list');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const text = input.value.trim();
-  if (!text) return;
-
-  const li = document.createElement('li');
-  li.textContent = text;
-  li.addEventListener('click', () =&gt; li.classList.toggle('done'));
-
-  const del = document.createElement('button');
-  del.textContent = '×';
-  del.addEventListener('click', (e) =&gt; {
-    e.stopPropagation();
-    li.remove();
-  });
-
-  li.appendChild(del);
-  list.appendChild(li);
-  input.value = '';
-});</code></pre>
-                    </div>
-                </div>
-
+                </form>
             </div>
         </section>
     </main>
 
-    <script>
-        // ---- Section 1: Animated Full Stack Request Flow ----
-        (() => {
-            const btn = document.getElementById('send-request-btn');
-            if (!btn) return;
-            const statusText = document.getElementById('flow-status-text');
-            const statusDot = document.querySelector('#flow-status .status-dot');
-            const steps = {
-                frontend: document.getElementById('step-frontend'),
-                backend: document.getElementById('step-backend'),
-                database: document.getElementById('step-database'),
-            };
-            const packets = [document.getElementById('packet-1'), document.getElementById('packet-2')];
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="footer-brand">Eventide</h3>
+                    <p>An online event booking site for people in Nepal.</p>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p>hello@eventide.example</p>
+                    <p>+977 1 4000 000</p>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="footer-heading">Find us</h4>
+                    <p>Durbar Marg<br>Kathmandu, 44600</p>
+                </div>
+            </div>
+            <hr class="footer-rule">
+            <p class="copyright">© 2026 Eventide. Built for CET138 Assignment 1.</p>
+        </div>
+    </footer>
 
-            const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-            const setStatus = (text, state) => {
-                statusText.textContent = text;
-                statusDot.dataset.state = state;
-            };
-            const clearActive = () => Object.values(steps).forEach((s) => s.classList.remove('is-active'));
-            const activate = (key) => {
-                clearActive();
-                steps[key].classList.add('is-active');
-            };
-            const sendPacket = (packetEl, direction) => {
-                packetEl.classList.remove('travel-forward', 'travel-back');
-                void packetEl.offsetWidth;
-                packetEl.classList.add(direction === 'forward' ? 'travel-forward' : 'travel-back');
-            };
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Booking Confirmed</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body-content">
+                    <!-- filled by JS -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            btn.addEventListener('click', async () => {
-                btn.disabled = true;
-                btn.textContent = 'Sending...';
-
-                setStatus('Sending request from front-end...', 'pending');
-                activate('frontend');
-                sendPacket(packets[0], 'forward');
-                await wait(900);
-
-                setStatus('Back-end received request. Processing...', 'pending');
-                activate('backend');
-                await wait(700);
-
-                setStatus('Querying database...', 'pending');
-                sendPacket(packets[1], 'forward');
-                await wait(900);
-                activate('database');
-                await wait(600);
-
-                setStatus('Database returned rows. Sending back...', 'pending');
-                activate('backend');
-                sendPacket(packets[1], 'back');
-                await wait(900);
-
-                setStatus('Response received. Rendering on front-end.', 'success');
-                activate('frontend');
-                sendPacket(packets[0], 'back');
-                await wait(900);
-
-                await wait(600);
-                clearActive();
-                setStatus('Idle — ready to send another request.', 'idle');
-                btn.disabled = false;
-                btn.textContent = 'Send Request';
-            });
-        })();
-
-        // ---- Section 4: Bootstrap form submit feedback ----
-        (() => {
-            const form = document.getElementById('bootstrap-contact-form');
-            if (!form) return;
-            const status = document.getElementById('bs-form-status');
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                if (!form.checkValidity()) {
-                    status.textContent = 'Please fill in every field.';
-                    status.className = 'bs-form-status error';
-                    return;
-                }
-                status.textContent = 'Message sent — we\'ll get back to you soon.';
-                status.className = 'bs-form-status success';
-                form.reset();
-            });
-        })();
-
-        // ---- Section 5: To-Do List ----
-        (() => {
-            const form = document.getElementById('todo-form');
-            if (!form) return;
-            const input = document.getElementById('todo-input');
-            const list = document.getElementById('todo-list');
-            const empty = document.getElementById('todo-empty');
-
-            const refreshEmpty = () => {
-                empty.style.display = list.children.length === 0 ? 'block' : 'none';
-            };
-            refreshEmpty();
-
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const text = input.value.trim();
-                if (!text) return;
-
-                const li = document.createElement('li');
-                li.className = 'todo-item';
-
-                const label = document.createElement('span');
-                label.className = 'todo-text';
-                label.textContent = text;
-
-                const del = document.createElement('button');
-                del.type = 'button';
-                del.className = 'todo-delete';
-                del.setAttribute('aria-label', 'Delete task');
-                del.textContent = '×';
-
-                li.appendChild(label);
-                li.appendChild(del);
-
-                label.addEventListener('click', () => li.classList.toggle('done'));
-                del.addEventListener('click', (ev) => {
-                    ev.stopPropagation();
-                    li.remove();
-                    refreshEmpty();
-                });
-
-                list.appendChild(li);
-                input.value = '';
-                refreshEmpty();
-                input.focus();
-            });
-        })();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
